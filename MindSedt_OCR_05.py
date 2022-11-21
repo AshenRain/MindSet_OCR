@@ -20,7 +20,7 @@ def eroding(im):
 def del_noise(im):
 	im = resize(im)
 	im = cv2.fastNlMeansDenoisingColored(im, None,10,10,7,21) # удаление шумов
-	im = eroding(im)										  # уменьшение размеров контуров
+	im = eroding(im)					  # уменьшение размеров контуров
 	im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 	im = cv2.GaussianBlur(im, (3, 3), 0)
 	#im = sharpness(im) #сомнительный фильтр
